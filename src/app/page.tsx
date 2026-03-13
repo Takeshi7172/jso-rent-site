@@ -36,6 +36,19 @@ const FloatingButtons = dynamic(() =>
   import("@/components/FloatingButtons").then((mod) => ({ default: mod.FloatingButtons }))
 );
 
+const FAQ = dynamic(
+  () => import("@/components/FAQ").then((mod) => ({ default: mod.FAQ })),
+  {
+    loading: () => (
+      <div className="py-20 bg-background">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <div className="animate-pulse">Загрузка FAQ...</div>
+        </div>
+      </div>
+    ),
+  }
+);
+
 export default function Home() {
   return (
     <>
@@ -46,6 +59,7 @@ export default function Home() {
         <PriceList />
         <Promotions />
         <Contacts />
+        <FAQ />
         <Features />
       </main>
       <Footer />

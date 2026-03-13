@@ -34,6 +34,7 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { category: slug } = await params;
   const category = getCategoryBySlug(slug);
+  const baseUrl = "https://instrumental.kz";
 
   if (!category) {
     return {
@@ -41,12 +42,47 @@ export async function generateMetadata({
     };
   }
 
+  const tools = getToolsByCategory(category.id);
+  const minPrice = Math.min(...tools.map((t) => t.price));
+  const maxPrice = Math.max(...tools.map((t) => t.price));
+
+  const title = `${category.name} в аренду в Астане — от ${minPrice.toLocaleString()} ₸/день`;
+  const description = `Аренда ${category.description.toLowerCase()} в Астане. ${tools.length} инструментов от ${minPrice.toLocaleString()} до ${maxPrice.toLocaleString()} ₸/день. Доставка по городу. Акция 3+1 — 4-й день бесплатно! JSO Rent.`;
+
   return {
-    title: `${category.name} в аренду | JSO Rent Астана`,
-    description: `Аренда ${category.description.toLowerCase()} в Астане. Доставка на объект. От 900 тенге в день. Акция 3+1!`,
+    title,
+    description,
+    keywords: [
+      `аренда ${category.name.toLowerCase()} Астана`,
+      `прокат ${category.name.toLowerCase()}`,
+      category.description.toLowerCase(),
+      "аренда инструментов Астана",
+      "прокат оборудования",
+    ],
     openGraph: {
-      title: `${category.name} в аренду | JSO Rent`,
-      description: `Аренда ${category.description.toLowerCase()} в Астане`,
+      title,
+      description,
+      type: "website",
+      locale: "ru_KZ",
+      url: `${baseUrl}/catalog/${category.id}`,
+      siteName: "JSO Rent",
+      images: [
+        {
+          url: category.image,
+          width: 800,
+          height: 600,
+          alt: `${category.name} в аренду в Астане — JSO Rent`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [category.image],
+    },
+    alternates: {
+      canonical: `${baseUrl}/catalog/${category.id}`,
     },
   };
 }
@@ -54,6 +90,7 @@ export async function generateMetadata({
 export default async function CategoryPage({ params }: PageProps) {
   const { category: slug } = await params;
   const category = getCategoryBySlug(slug);
+  const baseUrl = "https://instrumental.kz";
 
   if (!category) {
     notFound();
@@ -62,9 +99,55 @@ export default async function CategoryPage({ params }: PageProps) {
   const tools = getToolsByCategory(category.id);
   const Icon = category.icon;
 
+  // Generate ItemList schema for tools
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `${category.name} в аренду в Астане`,
+    description: `Каталог ${category.description.toLowerCase()} для аренды в JSO Rent`,
+    numberOfItems: tools.length,
+    itemListElement: tools.map((tool, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Product",
+        name: tool.name,
+        description: `${tool.name} в аренду в Астане${tool.brand ? ` (${tool.brand})` : ""}`,
+        brand: tool.brand
+          ? { "@type": "Brand", name: tool.brand }
+          : undefined,
+        offers: {
+          "@type": "Offer",
+          price: tool.price,
+          priceCurrency: "KZT",
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: tool.price,
+            priceCurrency: "KZT",
+            unitText: "день",
+            referenceQuantity: {
+              "@type": "QuantitativeValue",
+              value: 1,
+              unitCode: "DAY",
+            },
+          },
+          availability: "https://schema.org/InStock",
+          seller: {
+            "@type": "Organization",
+            name: "JSO Rent",
+          },
+        },
+      },
+    })),
+  };
 
   return (
     <>
+      {/* Product List Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
       <Header />
       <main id="main-content" className="min-h-screen pt-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -81,7 +164,7 @@ export default async function CategoryPage({ params }: PageProps) {
             <div className="relative h-48 sm:h-64">
               <Image
                 src={category.image}
-                alt={category.name}
+                alt={`${category.name} в аренду в Астане — прокат ${category.description.toLowerCase()} JSO Rent`}
                 fill
                 priority
                 sizes="(max-width: 1280px) 100vw, 1280px"
