@@ -1,26 +1,108 @@
 @import "tailwindcss";
 
 :root {
+  /* Чистый белый фон */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1a1a1a;
+
+  /* Orange - DeWalt style акцент */
+  --primary: #f97316;
+  --primary-hover: #ea580c;
+  --primary-light: #fb923c;
+
+  /* Orange CTA - единый стиль */
+  --cta: #f97316;
+  --cta-hover: #ea580c;
+
+  /* Тёплый серый - вторичный */
+  --accent: #78716c;
+  --accent-hover: #57534e;
+
+  /* Нейтральные */
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --card: #ffffff;
+  --card-hover: #f9fafb;
+}
+
+.dark {
+  /* Тёмный фон */
+  --background: #18181b;
+  --foreground: #fafafa;
+
+  /* Orange акцент для тёмной темы */
+  --primary: #fb923c;
+  --primary-hover: #fdba74;
+  --primary-light: #f97316;
+
+  --cta: #fb923c;
+  --cta-hover: #fdba74;
+
+  --accent: #a8a29e;
+  --accent-hover: #d6d3d1;
+
+  --muted: #a1a1aa;
+  --border: #3f3f46;
+  --card: #27272a;
+  --card-hover: #3f3f46;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-light: var(--primary-light);
+  --color-cta: var(--cta);
+  --color-cta-hover: var(--cta-hover);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Floating WhatsApp button animation */
+@keyframes pulse-cta {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(0, 230, 118, 0);
+  }
+}
+
+.pulse-cta {
+  animation: pulse-cta 2s infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
 }
