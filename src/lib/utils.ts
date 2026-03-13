@@ -5,7 +5,12 @@ import { WHATSAPP_LINK } from "./data";
  * Removes potentially dangerous characters from strings
  */
 export function sanitizeInput(input: string): string {
-  return input.replace(/[<>"']/g, "");
+  return input
+    .replace(/[<>"'`]/g, "")
+    .replace(/javascript:/gi, "")
+    .replace(/on\w+\s*=/gi, "")
+    .trim()
+    .slice(0, 200);
 }
 
 /**
