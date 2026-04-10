@@ -162,8 +162,11 @@ export default function RootLayout({
       reviewCount: "127",
       ratingCount: "127",
     },
+    image: `${baseUrl}/og-image.jpg`,
+    hasMap: "https://go.2gis.com/bx6Gf",
     sameAs: [
-      "https://2gis.kz/astana/geo/70000001102013683",
+      "https://go.2gis.com/bx6Gf",
+      "https://2gis.kz/astana/firm/70000001113171197",
       "https://wa.me/77066228061",
     ],
     hasOfferCatalog: {
@@ -232,6 +235,11 @@ export default function RootLayout({
       availableLanguage: ["Russian", "Kazakh"],
       areaServed: "KZ",
     },
+    sameAs: [
+      "https://go.2gis.com/bx6Gf",
+      "https://2gis.kz/astana/firm/70000001113171197",
+      "https://wa.me/77066228061",
+    ],
   };
 
   // WebSite Schema for Sitelinks Search

@@ -82,7 +82,7 @@ export async function generateMetadata({
       images: [category.image],
     },
     alternates: {
-      canonical: `${baseUrl}/catalog/${category.id}`,
+      canonical: `${baseUrl}/catalog/${category.id}/`,
     },
   };
 }
@@ -98,6 +98,32 @@ export default async function CategoryPage({ params }: PageProps) {
 
   const tools = getToolsByCategory(category.id);
   const Icon = category.icon;
+
+  // BreadcrumbList schema for rich results
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Главная",
+        item: baseUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Каталог",
+        item: `${baseUrl}/#catalog`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: category.name,
+        item: `${baseUrl}/catalog/${category.id}/`,
+      },
+    ],
+  };
 
   // Generate ItemList schema for tools
   const itemListSchema = {
@@ -143,6 +169,11 @@ export default async function CategoryPage({ params }: PageProps) {
 
   return (
     <>
+      {/* BreadcrumbList Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Product List Schema */}
       <script
         type="application/ld+json"

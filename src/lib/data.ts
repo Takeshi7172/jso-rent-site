@@ -48,7 +48,7 @@ export const WHATSAPP_LINK = `https://wa.me/${PHONE.replace("+", "")}`;
 export const PHONE_LINK = `tel:${PHONE}`;
 export const ADDRESS = "ул. Аманжол Болекпаев, 14, Астана";
 export const WORK_HOURS = "09:00 - 21:00 ежедневно";
-export const TWOGIS_LINK = "https://2gis.kz/astana/geo/70000001102013683";
+export const TWOGIS_LINK = "https://go.2gis.com/bx6Gf";
 export const COORDS = { lat: 51.12184, lng: 71.500955 };
 
 export const categories: Category[] = [

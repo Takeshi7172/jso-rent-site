@@ -108,7 +108,7 @@ export function Contacts() {
           {/* Map */}
           <div className="bg-background rounded-2xl border border-border overflow-hidden h-[400px] lg:h-auto">
             <iframe
-              src={`https://widgets.2gis.com/widget?type=firmsonmap&options=%7B%22pos%22%3A%7B%22lat%22%3A${COORDS.lat}%2C%22lon%22%3A${COORDS.lng}%2C%22zoom%22%3A16%7D%2C%22opt%22%3A%7B%22city%22%3A%22astana%22%7D%2C%22org%22%3A%2270000001102013683%22%7D`}
+              src={`https://widgets.2gis.com/widget?type=firmsonmap&options=%7B%22pos%22%3A%7B%22lat%22%3A${COORDS.lat}%2C%22lon%22%3A${COORDS.lng}%2C%22zoom%22%3A16%7D%2C%22opt%22%3A%7B%22city%22%3A%22astana%22%7D%2C%22org%22%3A%2270000001113171197%22%7D`}
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: "400px" }}

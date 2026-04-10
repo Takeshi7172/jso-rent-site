@@ -1,12 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "standalone",
+  output: "export",
+  trailingSlash: true,
   compress: true,
   poweredByHeader: false,
-  experimental: {
-    optimizePackageImports: ["lucide-react"],
-  },
   images: {
     unoptimized: true,
     remotePatterns: [
