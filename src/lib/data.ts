@@ -46,10 +46,10 @@ const CategorySchema = z.object({
 export const PHONE = "+77066228061";
 export const WHATSAPP_LINK = `https://wa.me/${PHONE.replace("+", "")}`;
 export const PHONE_LINK = `tel:${PHONE}`;
-export const ADDRESS = "ул. Аманжол Болекпаев, 14, Астана";
-export const WORK_HOURS = "09:00 - 21:00 ежедневно";
+export const ADDRESS = "Е-15 улица, 11/1, Астана";
+export const WORK_HOURS = "09:00 - 20:00 ежедневно";
 export const TWOGIS_LINK = "https://go.2gis.com/bx6Gf";
-export const COORDS = { lat: 51.12184, lng: 71.500955 };
+export const COORDS = { lat: 51.126713, lng: 71.373613 };
 
 export const categories: Category[] = [
   {

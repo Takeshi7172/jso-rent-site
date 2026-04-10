@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -18,11 +19,11 @@ const baseUrl = "https://instrumental.kz";
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "JSO Rent | Аренда инструментов в Астане — от 900 ₸/день",
-    template: "%s | JSO Rent Астана",
+    default: "ПрокатПрокат | Аренда инструментов в Астане — от 900 ₸/день",
+    template: "%s | ПрокатПрокат Астана",
   },
   description:
-    "Аренда строительных инструментов в Астане от 900 ₸/день. Перфораторы, болгарки, генераторы, компрессоры, пылесосы Керхер. Доставка по городу. Акция 3+1 — 4-й день бесплатно! Работаем ежедневно 09:00-21:00.",
+    "Аренда строительных инструментов в Астане от 900 ₸/день. Перфораторы, болгарки, генераторы, компрессоры, пылесосы Керхер. Доставка по городу. Акция 3+1 — 4-й день бесплатно! Работаем ежедневно 09:00-20:00.",
   keywords: [
     // Primary keywords
     "аренда инструментов Астана",
@@ -48,33 +49,33 @@ export const metadata: Metadata = {
     "аренда техники для ремонта",
     "инструменты напрокат",
   ],
-  authors: [{ name: "JSO Rent" }],
-  creator: "JSO Rent",
-  publisher: "JSO Rent",
+  authors: [{ name: "ПрокатПрокат" }],
+  creator: "ПрокатПрокат",
+  publisher: "ПрокатПрокат",
   formatDetection: {
     telephone: true,
     email: false,
   },
   openGraph: {
-    title: "JSO Rent | Аренда инструментов в Астане — от 900 ₸/день",
+    title: "ПрокатПрокат | Аренда инструментов в Астане — от 900 ₸/день",
     description:
       "70+ инструментов в аренду: перфораторы, болгарки, генераторы, Керхер. Акция 3+1 — 4-й день бесплатно! Доставка по Астане.",
     type: "website",
     locale: "ru_KZ",
     url: baseUrl,
-    siteName: "JSO Rent",
+    siteName: "ПрокатПрокат",
     images: [
       {
         url: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=1200&h=630&fit=crop&q=80",
         width: 1200,
         height: 630,
-        alt: "JSO Rent - Аренда строительных инструментов в Астане",
+        alt: "ПрокатПрокат - Аренда строительных инструментов в Астане",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "JSO Rent | Аренда инструментов в Астане",
+    title: "ПрокатПрокат | Аренда инструментов в Астане",
     description:
       "70+ инструментов в аренду от 900 ₸/день. Акция 3+1. Доставка по Астане.",
     images: [
@@ -96,9 +97,8 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // Add when you have these
-    // google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION || undefined,
+    yandex: process.env.NEXT_PUBLIC_YW_VERIFICATION || undefined,
   },
 };
 
@@ -112,8 +112,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `${baseUrl}/#business`,
-    name: "JSO Rent",
-    alternateName: "ЖСО Рент",
+    name: "ПрокатПрокат",
+    alternateName: "ПрокатПрокат",
     description:
       "Аренда строительных инструментов в Астане. Перфораторы, болгарки, генераторы, компрессоры, пылесосы Керхер. Более 70 единиц техники.",
     url: baseUrl,
@@ -121,7 +121,7 @@ export default function RootLayout({
     email: "info@instrumental.kz",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "ул. Аманжол Болекпаев, 14",
+      streetAddress: "Е-15 улица, 11/1",
       addressLocality: "Астана",
       addressRegion: "Астана",
       postalCode: "010000",
@@ -129,9 +129,10 @@ export default function RootLayout({
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 51.12184,
-      longitude: 71.500955,
+      latitude: 51.126713,
+      longitude: 71.373613,
     },
+    openingHours: "Mo-Su 09:00-20:00",
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: [
@@ -144,7 +145,7 @@ export default function RootLayout({
         "Sunday",
       ],
       opens: "09:00",
-      closes: "21:00",
+      closes: "20:00",
     },
     priceRange: "₸₸",
     currenciesAccepted: "KZT",
@@ -218,13 +219,14 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": `${baseUrl}/#organization`,
-    name: "JSO Rent",
+    name: "ПрокатПрокат",
+    legalName: "ПрокатПрокат",
     url: baseUrl,
     logo: `${baseUrl}/logo.png`,
     description: "Сервис аренды строительных инструментов в Астане",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "ул. Аманжол Болекпаев, 14",
+      streetAddress: "Е-15 улица, 11/1",
       addressLocality: "Астана",
       addressCountry: "KZ",
     },
@@ -247,7 +249,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${baseUrl}/#website`,
-    name: "JSO Rent",
+    name: "ПрокатПрокат",
     url: baseUrl,
     description: "Аренда инструментов в Астане",
     publisher: {
@@ -267,7 +269,7 @@ export default function RootLayout({
         name: "Какие документы нужны для аренды инструмента?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Для аренды инструмента в JSO Rent нужно удостоверение личности (ИИН) и залог, который возвращается при сдаче инструмента в исправном состоянии.",
+          text: "Для аренды инструмента в ПрокатПрокат нужно удостоверение личности (ИИН) и залог, который возвращается при сдаче инструмента в исправном состоянии.",
         },
       },
       {
@@ -283,7 +285,7 @@ export default function RootLayout({
         name: "Сколько стоит аренда перфоратора в Астане?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Аренда перфоратора в JSO Rent стоит от 900 ₸/день (3 Дж) до 3800 ₸/день (отбойник 50 Дж). Действует акция 3+1: при аренде на 3 дня — 4-й день бесплатно.",
+          text: "Аренда перфоратора в ПрокатПрокат стоит от 900 ₸/день (3 Дж) до 3800 ₸/день (отбойник 50 Дж). Действует акция 3+1: при аренде на 3 дня — 4-й день бесплатно.",
         },
       },
       {
@@ -296,10 +298,10 @@ export default function RootLayout({
       },
       {
         "@type": "Question",
-        name: "Работает ли JSO Rent в выходные дни?",
+        name: "Работает ли ПрокатПрокат в выходные дни?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Да, JSO Rent работает ежедневно без выходных с 09:00 до 21:00, включая субботу и воскресенье.",
+          text: "Да, ПрокатПрокат работает ежедневно без выходных с 09:00 до 20:00, включая субботу и воскресенье.",
         },
       },
       {
@@ -307,7 +309,7 @@ export default function RootLayout({
         name: "Какие бренды инструментов есть в аренду?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "В JSO Rent представлены профессиональные бренды: Denzel, Alteco, Karcher (Керхер), Bosch, Starmix, Crown, Resanta. Всего более 70 единиц техники.",
+          text: "В ПрокатПрокат представлены профессиональные бренды: Denzel, Alteco, Karcher (Керхер), Bosch, Starmix, Crown, Resanta. Всего более 70 единиц техники.",
         },
       },
       {
@@ -315,7 +317,7 @@ export default function RootLayout({
         name: "Можно ли арендовать генератор в Астане?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Да, в JSO Rent можно арендовать генераторы мощностью от 3.3 кВт (3000 ₸/день) до 8.5 кВт (8500 ₸/день). Все генераторы бренда Denzel, надёжные и проверенные.",
+          text: "Да, в ПрокатПрокат можно арендовать генераторы мощностью от 3.3 кВт (3000 ₸/день) до 8.5 кВт (8500 ₸/день). Все генераторы бренда Denzel, надёжные и проверенные.",
         },
       },
       {
@@ -383,6 +385,40 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>{children}</ThemeProvider>
+        {process.env.NEXT_PUBLIC_GA4_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA4_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script
+              id="ga4-init"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+      window.dataLayer=window.dataLayer||[];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js',new Date());
+      gtag('config','${process.env.NEXT_PUBLIC_GA4_ID}');
+    `,
+              }}
+            />
+          </>
+        )}
+        {process.env.NEXT_PUBLIC_YM_ID && (
+          <Script
+            id="ym-init"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+    ym(${process.env.NEXT_PUBLIC_YM_ID},"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
+  `,
+            }}
+          />
+        )}
       </body>
     </html>
   );

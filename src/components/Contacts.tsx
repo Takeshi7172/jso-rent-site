@@ -114,7 +114,7 @@ export function Contacts() {
               style={{ border: 0, minHeight: "400px" }}
               allowFullScreen
               loading="lazy"
-              title="JSO Rent на карте 2GIS"
+              title="ПрокатПрокат на карте 2GIS"
             />
           </div>
         </div>
