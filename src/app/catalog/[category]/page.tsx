@@ -38,7 +38,7 @@ export async function generateMetadata({
 
   if (!category) {
     return {
-      title: "Категория не найдена | JSO Rent",
+      title: "Категория не найдена | ПрокатПрокат",
     };
   }
 
@@ -46,8 +46,8 @@ export async function generateMetadata({
   const minPrice = Math.min(...tools.map((t) => t.price));
   const maxPrice = Math.max(...tools.map((t) => t.price));
 
-  const title = `${category.name} в аренду в Астане — от ${minPrice.toLocaleString()} ₸/день`;
-  const description = `Аренда ${category.description.toLowerCase()} в Астане. ${tools.length} инструментов от ${minPrice.toLocaleString()} до ${maxPrice.toLocaleString()} ₸/день. Доставка по городу. Акция 3+1 — 4-й день бесплатно! JSO Rent.`;
+  const title = `${category.name} в аренду в Астане — от ${minPrice.toLocaleString()} ₸/день | ПрокатПрокат`;
+  const description = `Прокат ${category.description.toLowerCase()} в Астане. ${tools.length} инструментов от ${minPrice.toLocaleString()} ₸/день. Доставка по городу. Акция 3+1 — 4-й день бесплатно. Звоните: +7 706 622-80-61`;
 
   return {
     title,
@@ -65,13 +65,13 @@ export async function generateMetadata({
       type: "website",
       locale: "ru_KZ",
       url: `${baseUrl}/catalog/${category.id}`,
-      siteName: "JSO Rent",
+      siteName: "ПрокатПрокат",
       images: [
         {
           url: category.image,
           width: 800,
           height: 600,
-          alt: `${category.name} в аренду в Астане — JSO Rent`,
+          alt: `${category.name} в аренду в Астане — ПрокатПрокат`,
         },
       ],
     },
@@ -98,6 +98,7 @@ export default async function CategoryPage({ params }: PageProps) {
 
   const tools = getToolsByCategory(category.id);
   const Icon = category.icon;
+  const minPrice = Math.min(...tools.map((t) => t.price));
 
   // BreadcrumbList schema for rich results
   const breadcrumbSchema = {
@@ -130,7 +131,7 @@ export default async function CategoryPage({ params }: PageProps) {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: `${category.name} в аренду в Астане`,
-    description: `Каталог ${category.description.toLowerCase()} для аренды в JSO Rent`,
+    description: `Каталог ${category.description.toLowerCase()} для аренды в Астане. ПрокатПрокат — от ${minPrice.toLocaleString()} ₸/день с доставкой.`,
     numberOfItems: tools.length,
     itemListElement: tools.map((tool, index) => ({
       "@type": "ListItem",
@@ -160,7 +161,7 @@ export default async function CategoryPage({ params }: PageProps) {
           availability: "https://schema.org/InStock",
           seller: {
             "@type": "Organization",
-            name: "JSO Rent",
+            name: "ПрокатПрокат",
           },
         },
       },
@@ -195,7 +196,7 @@ export default async function CategoryPage({ params }: PageProps) {
             <div className="relative h-48 sm:h-64">
               <Image
                 src={category.image}
-                alt={`${category.name} в аренду в Астане — прокат ${category.description.toLowerCase()} JSO Rent`}
+                alt={`${category.name} в аренду в Астане — прокат ${category.description.toLowerCase()} ПрокатПрокат`}
                 fill
                 priority
                 sizes="(max-width: 1280px) 100vw, 1280px"

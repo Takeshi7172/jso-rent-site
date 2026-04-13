@@ -11,8 +11,8 @@ export function Footer() {
           {/* Logo and description */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <span className="text-2xl font-bold text-primary">JSO</span>
-              <span className="text-2xl font-light text-foreground">Rent</span>
+              <span className="text-2xl font-bold text-primary">Прокат</span>
+              <span className="text-2xl font-light text-foreground">Прокат</span>
             </Link>
             <p className="text-muted max-w-md">
               Аренда профессиональных строительных инструментов в Астане.
@@ -73,7 +73,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-muted text-sm">
-            &copy; {currentYear} JSO Rent. Все права защищены.
+            &copy; {currentYear} ПрокатПрокат. Все права защищены.
           </p>
           <p className="text-muted text-sm">
             Астана, Казахстан

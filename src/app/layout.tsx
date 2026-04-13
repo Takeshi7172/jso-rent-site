@@ -124,7 +124,7 @@ export default function RootLayout({
       streetAddress: "Е-15 улица, 11/1",
       addressLocality: "Астана",
       addressRegion: "Астана",
-      postalCode: "010000",
+      postalCode: "Z05X3T3",
       addressCountry: "KZ",
     },
     geo: {
@@ -151,17 +151,13 @@ export default function RootLayout({
     currenciesAccepted: "KZT",
     paymentAccepted: "Cash, Card",
     areaServed: {
-      "@type": "City",
-      name: "Астана",
-      "@id": "https://www.wikidata.org/wiki/Q1520",
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      bestRating: "5",
-      worstRating: "1",
-      reviewCount: "127",
-      ratingCount: "127",
+      "@type": "GeoCircle",
+      geoMidpoint: {
+        "@type": "GeoCoordinates",
+        latitude: 51.126713,
+        longitude: 71.373613,
+      },
+      geoRadius: "30000",
     },
     image: `${baseUrl}/og-image.jpg`,
     hasMap: "https://go.2gis.com/bx6Gf",
