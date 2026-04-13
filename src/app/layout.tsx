@@ -497,36 +497,40 @@ export default function RootLayout({
             }}
           />
         )}
-        {/* Google Ads gtag.js */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18080119507"
-          strategy="afterInteractive"
-        />
-        <Script
-          id="google-ads-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
+        {process.env.NEXT_PUBLIC_GADS_ID && (
+          <>
+            {/* Google Ads gtag.js */}
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GADS_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script
+              id="google-ads-init"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
     window.dataLayer=window.dataLayer||[];
     function gtag(){dataLayer.push(arguments);}
     gtag('js',new Date());
-    gtag('config','AW-18080119507');
+    gtag('config','${process.env.NEXT_PUBLIC_GADS_ID}');
   `,
-          }}
-        />
-        <Script
-          id="google-ads-conversion"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
+              }}
+            />
+            <Script
+              id="google-ads-conversion"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
     gtag('event', 'conversion', {
-      'send_to': 'AW-18080119507/XHHbCNzPmZscENP1oq1D',
+      'send_to': '${process.env.NEXT_PUBLIC_GADS_CONVERSION}',
       'value': 1.0,
       'currency': 'KZT'
     });
   `,
-          }}
-        />
+              }}
+            />
+          </>
+        )}
       </body>
     </html>
   );
