@@ -1,0 +1,9 @@
+node_modules/
+src/
+.archon/
+.claude/
+*.zip
+out/
+.env*
+next-env.d.ts
+.next/
