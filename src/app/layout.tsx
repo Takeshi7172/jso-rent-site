@@ -512,6 +512,19 @@ export default function RootLayout({
   `,
           }}
         />
+        <Script
+          id="google-ads-conversion"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18080119507/XHHbCNzPmZscENP1oq1D',
+      'value': 1.0,
+      'currency': 'KZT'
+    });
+  `,
+          }}
+        />
       </body>
     </html>
   );
