@@ -157,7 +157,7 @@ export default function RootLayout({
         latitude: 51.126713,
         longitude: 71.373613,
       },
-      geoRadius: "30000",
+      geoRadius: "15000",
     },
     image: `${baseUrl}/og-image.jpg`,
     hasMap: "https://go.2gis.com/bx6Gf",
