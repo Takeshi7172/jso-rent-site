@@ -2,18 +2,24 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_next/
-Disallow: /static/
 
+# === AI Search Crawlers ===
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-User-agent: Claude-Web
+User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: Anthropic-AI
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
 Allow: /
 
 User-agent: PerplexityBot
@@ -22,6 +28,22 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# === Traditional Search ===
 User-agent: YandexBot
 Allow: /
 
