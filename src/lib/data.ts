@@ -209,7 +209,7 @@ export const tools: Tool[] = [
   { name: "Гайковерт пневмо", price: 3000, category: "other" },
   { name: "Бормашина, Гравер", price: 1500, category: "other" },
   { name: "Ленточная шлифмашина Crown", price: 2500, brand: "Crown", category: "other" },
-  { name: "Шлифмашина эксцентриковая", price: 200, category: "other" },
+  { name: "Шлифмашина эксцентриковая", price: 2000, category: "other" },
   { name: "Шлифмашина жираф", price: 5000, category: "other" },
   { name: "Полировальная машинка", price: 2500, category: "other" },
   { name: "Рубанок электрический", price: 3000, category: "other" },
