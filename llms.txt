@@ -1,70 +1,42 @@
-# JSO Rent - Tool Rental Service in Astana, Kazakhstan
+# ПрокатПрокат — Аренда строительных инструментов в Астане
 
-> Аренда строительных инструментов в Астане. Прокат перфораторов, болгарок, генераторов, компрессоров, пылесосов Керхер с доставкой.
+> Прокат строительного инструмента и оборудования в Астане, Казахстан. Работаем без выходных. Доставка по городу.
 
-## About
+## О компании
+- Название: ПрокатПрокат
+- Сайт: https://instrumental.kz
+- Город: Астана, Казахстан
+- Услуга: аренда (прокат) строительных инструментов и оборудования
+- Минимальный срок: 1 день
+- Оплата: наличные, Kaspi Gold, Kaspi QR, безнал для ТОО/ИП
 
-JSO Rent is a professional tool rental service in Astana, Kazakhstan. We offer 70+ construction tools and equipment for rent with delivery. Operating daily 09:00-21:00.
+## Категории инструментов
+- Перфораторы и отбойные молотки (от 900₸/день)
+- Болгарки / УШМ (от 900₸/день)
+- Генераторы бензиновые (от 3000₸/день)
+- Компрессоры (от 3000₸/день)
+- Сварочные аппараты (от 2300₸/день)
+- Тепловые пушки (от 1000₸/день)
+- Клининговое оборудование — Karcher (от 3000₸/день)
+- Садовая техника (от 1500₸/день)
+- Измерительные приборы — лазерные уровни (от 1500₸/день)
+- Прочее — штроборезы, вибраторы, шлифмашины
 
-## Key Information
+## Условия аренды
+- Документ: удостоверение личности (ИИН)
+- Договор аренды на месте (5 минут)
+- Залог зависит от инструмента, возвращается при исправном возврате
+- Доставка по Астане при заказе от 10 000₸ бесплатно
+- Самовывоз бесплатно
+- Акция 3+1: 3 дня аренды — 4-й день бесплатно
 
-- **Location**: ул. Аманжол Болекпаев, 14, Астана, Казахстан
-- **Phone**: +7 706 622 8061
-- **WhatsApp**: Available for instant booking
-- **Rating**: 4.8/5 on 2GIS (127 reviews)
-- **Price Range**: 900 - 8500 ₸/day
+## Контакты
+- Телефон и WhatsApp: +7 706 622-80-61
+- Адрес: Е-15 улица, 11/1, Нура район, Астана
+- График: ежедневно 09:00-20:00
 
-## Services
-
-### Tool Categories
-- Перфораторы и дрели (Drills & Rotary Hammers): 900-3800 ₸/day
-- Болгарки и пилы (Grinders & Saws): 900-4000 ₸/day
-- Генераторы (Generators): 3000-8500 ₸/day
-- Компрессоры (Compressors): 1500-8000 ₸/day
-- Сварочное оборудование (Welding Equipment): 1900-3000 ₸/day
-- Тепловые пушки (Heat Guns): 1000-4500 ₸/day
-- Клининг Керхер (Karcher Cleaning): 3000-6500 ₸/day
-- Садовое оборудование (Garden Equipment): 1500-5000 ₸/day
-- Измерительные приборы (Measuring Tools): 1500-2000 ₸/day
-
-### Promotions
-- **3+1 Action**: Rent for 3 days, get 4th day FREE
-- **Free Delivery**: Orders over 10,000 ₸
-
-## Frequently Asked Questions
-
-Q: Какие документы нужны для аренды?
-A: Удостоверение личности и залог (возвращается при сдаче инструмента).
-
-Q: Есть ли доставка?
-A: Да, доставка по Астане. Бесплатно при заказе от 10 000 ₸.
-
-Q: Какой минимальный срок аренды?
-A: Минимум 1 день (сутки).
-
-Q: Работаете ли вы в выходные?
-A: Да, работаем ежедневно с 09:00 до 21:00.
-
-Q: Какие бренды инструментов?
-A: Denzel, Alteco, Karcher, Bosch, Starmix, Crown, Resanta.
-
-## Pages
-
-- [Homepage](https://instrumental.kz/): Main page with all services
-- [Drills & Rotary Hammers](https://instrumental.kz/catalog/drills): Перфораторы от 900 ₸/день
-- [Grinders & Saws](https://instrumental.kz/catalog/grinders): Болгарки от 900 ₸/день
-- [Generators](https://instrumental.kz/catalog/generators): Генераторы от 3000 ₸/день
-- [Compressors](https://instrumental.kz/catalog/compressors): Компрессоры от 1500 ₸/день
-- [Welding](https://instrumental.kz/catalog/welding): Сварка от 1900 ₸/день
-- [Heating](https://instrumental.kz/catalog/heating): Тепловые пушки от 1000 ₸/день
-- [Cleaning](https://instrumental.kz/catalog/cleaning): Керхер от 3000 ₸/день
-- [Garden](https://instrumental.kz/catalog/garden): Садовая техника от 1500 ₸/день
-- [Measuring](https://instrumental.kz/catalog/measuring): Измерительные от 1500 ₸/день
-
-## Contact
-
-For tool rental inquiries:
-- WhatsApp: +7 706 622 8061 (fastest response)
-- Phone: +7 706 622 8061
-- Address: ул. Аманжол Болекпаев, 14, Астана
-- 2GIS: https://2gis.kz/astana/geo/70000001102013683
+## Ссылки
+- [Главная](https://instrumental.kz)
+- [Каталог](https://instrumental.kz/#catalog)
+- [Цены](https://instrumental.kz/#prices)
+- [Контакты](https://instrumental.kz/#contacts)
