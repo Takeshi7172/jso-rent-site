@@ -40,7 +40,7 @@ const CategorySchema = z.object({
   id: z.string().min(1, "Category ID cannot be empty").max(50),
   name: z.string().min(1, "Category name cannot be empty").max(100),
   description: z.string().min(1, "Description cannot be empty").max(500),
-  image: z.string().url("Image must be a valid URL"),
+  image: z.string().min(1, "Image path cannot be empty"),
 });
 
 export const PHONE = "+77066228061";
@@ -57,49 +57,49 @@ export const categories: Category[] = [
     name: "Перфораторы и дрели",
     icon: Drill,
     description: "Перфораторы 3-10 Дж, шуруповерты, дрели",
-    image: "https://alteco.kz/img/cache/product_medium/2/images/MnkKAfos.jpg",
+    image: "/images/categories/drills.jpg",
   },
   {
     id: "grinders",
     name: "Болгарки и пилы",
     icon: Hammer,
     description: "Болгарки 115-230 мм, торцовки, лобзики",
-    image: "https://alteco.kz/img/cache/product_medium/2/images/vqscMzia.jpg",
+    image: "/images/categories/grinders.jpg",
   },
   {
     id: "generators",
     name: "Генераторы",
     icon: Zap,
     description: "Генераторы 3.3 - 8.5 кВт",
-    image: "https://static.insales-cdn.com/r/JxbJpkrDh3Y/rs:fit:560:0:1/q:100/plain/images/products/1/5198/652629070/d0.jpg@jpg",
+    image: "/images/categories/generators.jpg",
   },
   {
     id: "compressors",
     name: "Компрессоры",
     icon: Wind,
     description: "Компрессоры 25-100 л, краскопульты",
-    image: "https://static.insales-cdn.com/images/collections/1/1313/91055393/large_1169900_std_3_300x200.jpg",
+    image: "/images/categories/compressors.jpg",
   },
   {
     id: "welding",
     name: "Сварка и резка",
     icon: Sparkles,
     description: "Сварочные аппараты, штроборезы",
-    image: "https://alteco.kz/img/cache/product_medium/2/images/rDVutqTH.jpg",
+    image: "/images/categories/welding.jpg",
   },
   {
     id: "heating",
     name: "Тепловые пушки",
     icon: Flame,
     description: "Газовые, дизельные, электрические",
-    image: "https://e-catalog.com/jpg/2158194.jpg",
+    image: "/images/categories/heating.jpg",
   },
   {
     id: "cleaning",
     name: "Клининг",
     icon: Waves,
     description: "Пылесосы Керхер, мойки, парогенераторы",
-    image: "https://static.insales-cdn.com/images/collections/1/1321/91055401/large_1100130_std_1.jpg",
+    image: "/images/categories/cleaning.jpg",
   },
   {
     id: "garden",
@@ -120,7 +120,7 @@ export const categories: Category[] = [
     name: "Прочее",
     icon: Wrench,
     description: "Вибраторы, стремянки, катушки",
-    image: "https://alteco.kz/img/cache/product_medium/2/images/0lS20q6V.jpg",
+    image: "/images/categories/other.jpg",
   },
 ];
 
